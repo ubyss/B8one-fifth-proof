@@ -2,7 +2,6 @@ import React from "react";
 import { Products } from "../../interfaces/IOrderform";
 
 const ProductResume: React.FC<Products> = ({ products }) => {
-  console.log(products, "rems");
 
   const totalValue = products.reduce(
     (total, product) => total + parseFloat(product.price),

@@ -46,3 +46,15 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+button{
+	background: none;
+	border: none;
+    transition: ease-in-out .5s;
+	cursor: pointer;
+}
+
+button:hover {
+    background: #2E44A1;
+    color: #FFFFFF;
+  }

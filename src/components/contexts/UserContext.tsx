@@ -1,36 +1,36 @@
 import { useQuery } from '@apollo/client';
 import React, { createContext, useContext, useState } from 'react';
-import { getAll } from '../../graphql/getAll';
-
-interface User {
-  name: string;
-  email: string;
-}
-
+import { getOrderForm } from '../../graphql/getOrderForm';
+import { ProductListProps, Product  } from './../../interfaces/IOrderform'
 interface UserContextProps {
-  user: User | null;
-  setUser: React.Dispatch<React.SetStateAction<User | null>>;
-  setUt: React.Dispatch<React.SetStateAction<string>>;
-  t: string
-  data: object | null
+  products: Product[] | null
+  setProducts: React.Dispatch<React.SetStateAction<Product[] | null>>;
 }
 
 const UserContext = createContext<UserContextProps | undefined>(undefined);
 
 export const UserProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [t, setUt] = useState('dwdwdwdwd');
-  const [data, setData] = useState({})
+  const [products, setProducts] = useState<Product[]  | null>(null);
 
-  useQuery(getAll, {
-    onCompleted(data) {
-      setData(data)
+  useQuery(getOrderForm, {
+    variables: {
+      "input": {
+        orderFormId: "c7eb7303-c53f-417d-8d51-cce67e5959e1"
+      }
     },
+    onCompleted(data) {
+      const { orderForm } = data
+      const { items } = orderForm
+      setProducts(items)
+    },
+    fetchPolicy: 'no-cache'
   });
+
+  
 
 
   return (
-    <UserContext.Provider value={{ user, setUser, t, setUt, data }}>
+    <UserContext.Provider value={{ products, setProducts }}>
       {children}
     </UserContext.Provider>
   );

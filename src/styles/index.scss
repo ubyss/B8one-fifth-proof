@@ -1,0 +1,339 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+body {
+  background: #f1f2f9;
+}
+
+* {
+  font-family: "Inter", sans-serif !important;
+}
+
+.header {
+  background: #142159;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  padding: 16px 32px 16px 20px;
+  color: #ffffff;
+  justify-content: space-between;
+
+  &-left,
+  &-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+  }
+}
+
+.ResumeTopBar {
+  display: flex;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 24px 148px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #101010;
+  }
+
+  button {
+    color: #2e44a1;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    border: 1.5px solid #2e44a1;
+    border-radius: 5px;
+    padding: 12px 24px;
+  }
+}
+
+.ProductDashboard {
+  display: flex;
+  max-width: 1144px;
+  margin: 0 auto;
+  gap: 2rem;
+
+  &__left {
+    flex-grow: 1;
+  }
+}
+
+.ProductCard {
+  background: #ffffff;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1.5rem;
+
+  &__Top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 16px;
+      color: #555555;
+
+      &:first-child {
+        flex-grow: 1;
+      }
+
+      &:last-child {
+        margin-left: 1.5rem;
+        margin-right: 4.7rem;
+      }
+    }
+  }
+
+  &__product-info {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+
+    &__container {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 0;
+      gap: 1.5rem;
+      flex-grow: 1;
+    }
+
+    &__price {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 2;
+      span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #101010;
+
+        &:first-child {
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          text-align: center;
+          color: rgba(0, 0, 0, 0.6);
+          margin: 0 auto;
+        }
+
+        &:last-child {
+        }
+      }
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__texts {
+      display: flex;
+      flex-direction: column;
+
+      p{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0.005em;
+        color: #101010;
+      }
+
+      span{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -0.005em;
+        color: #555555;
+
+        strong{
+            color: #2E44A1;
+            font-weight: 600;
+        }
+      }
+    }
+
+    &__warranty {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e5e5;
+
+      button {
+        border: 1.5px solid #2e44a1;
+        border-radius: 5px;
+        padding: 10px 24px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #2e44a1;
+      }
+
+      span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: #2e44a1;
+        transition: .3s ease-in-out;
+        padding: 10px 16px;
+      }
+
+      span:hover {
+        background: #DAE0E4;
+        border-radius: 5px;
+      }
+    }
+
+    &__delivery {
+      margin: 1rem 0;
+      span {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        color: #101010;
+        margin-bottom: 0.5rem;
+      }
+
+      .container {
+        margin-top: 8px;
+        display: flex;
+        gap: 1.25rem;
+
+        label {
+          border-radius: 8px;
+          padding: 12px 24px;
+          width: 50%;
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12px;
+          line-height: 16px;
+          color: #101010;
+          display: flex;
+          gap: 1rem;
+
+          &:first-child {
+            border: 2px solid #425dc7;
+          }
+
+          &:last-child {
+            border: 1px solid #d5d5d5;
+          }
+
+          div {
+            display: flex;
+            flex-direction: column;
+
+            span {
+              font-style: normal;
+              font-weight: 500;
+              font-size: 11px;
+              line-height: 16px;
+              color: #262626;
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 26px;
+    span {
+      line-height: 24px;
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+}
+
+.CheckoutResume {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
+  padding: 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 332px;
+  background: #ffffff;
+
+  .subtotal,
+  .discount,
+  .delivery,
+  .total {
+    display: flex;
+    justify-content: space-between;
+
+    span:first-child {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      color: rgba(0, 0, 0, 0.6);
+    }
+
+    span:last-child {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+    }
+  }
+
+  .discount {
+    .discount-text {
+      color: #eb0045!important
+    }
+  }
+
+  hr {
+    margin: 1.5rem 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    border: none;
+  }
+
+  button {
+    background: #2e44a1;
+    border-radius: 5px;
+    padding: 12px 24px;
+    color: #ffffff;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 1.5rem;
+  }
+}
+
+select{
+    width: 96px;
+    height: 36px;
+    background: #FFFFFF;
+    border-radius: 5px;
+}
+
+

@@ -26,12 +26,16 @@ body {
 }
 
 .ResumeTopBar {
-  display: flex;
   background: rgba(255, 255, 255, 0.5);
   padding: 24px 148px;
+  margin-bottom: 2rem;
+
+  &__text{
+  display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  max-width: 1144px;
+  margin: 0 auto;
 
   h2 {
     font-weight: 600;
@@ -49,6 +53,8 @@ body {
     border-radius: 5px;
     padding: 12px 24px;
   }
+}
+
 }
 
 .ProductDashboard {

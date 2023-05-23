@@ -1,8 +1,8 @@
 import React from "react";
-import { Product } from "../interfaces/IOrderform";
-import { useUser } from "./contexts/UserContext";
-import ProductCard from "./ProductCard";
-import ProductResume from "./ProductResume";
+import { Product } from "../../interfaces/IOrderform";
+import { useUser } from "../contexts/UserContext";
+import ProductCard from "../ProductCard";
+import ProductResume from "../ProductResume";
 
 const ProductDashboard = () => {
   const { products, setProducts } = useUser();

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { ProductCardProps } from "./../interfaces/IOrderform";
+import { ProductCardProps, ProductListProps, Product } from "../../interfaces/IOrderform";
 
 const ProductCard: React.FC<ProductCardProps> = ({
   id,
@@ -15,21 +15,17 @@ const ProductCard: React.FC<ProductCardProps> = ({
   const [quantity, setQuantity] = useState(1);
   const [selectedOption, setSelectedOption] = useState("retirada");
 
-  const handleQuantityChange = (e) => {
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setQuantity(Number(e.target.value));
   };
-
-  const removeProduct = (id: string) => {
-    setProducts((prevProducts) =>
-      prevProducts.filter((product) => product.id !== id)
-    );
-  };
-
-  const handleOptionChange = (e) => {
+  
+  const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(e.target.value);
   };
 
-  console.log(shipping);
+  const removeProduct = (id: string) => {
+    setProducts(products.filter(product => product.id !== id));
+  };
 
   const total = quantity * Number(listPrice);
 
@@ -51,8 +47,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
         </div>
         <div className="ProductCard__product-info__price">
-          <span>{listPrice}</span>
-          <span>{price}</span>
+          <span>R$ {listPrice}</span>
+          <span>R$ {price}</span>
         </div>
         <select onChange={handleQuantityChange}>
           {[...Array(10).keys()].map((value) => (
@@ -86,7 +82,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <div className="ProductCard__product-info__delivery">
         <span>Forma de entrega</span>
         <div className="container">
-        <label>
+        <label className={selectedOption === 'retirada' ? 'selected' : ''}>
           <input
             type="radio"
             value="retirada"
@@ -99,7 +95,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </div>
           
         </label>
-        <label>
+        { shipping.pickup && (
+        <label className={selectedOption === 'entrega' ? 'selected' : ''}>
           <input
             type="radio"
             value="entrega"
@@ -108,9 +105,11 @@ const ProductCard: React.FC<ProductCardProps> = ({
           />
         <div>
           <span>Entrega</span>
-          <span>Receba até 2 dias úteis</span>
+          <span>Receba até {shipping?.delivery?.days} úteis</span>
           </div>
+          <p>+ R$ {shipping?.delivery?.value}</p>
         </label>
+        )}
         </div>
       </div>
       <div className="total">

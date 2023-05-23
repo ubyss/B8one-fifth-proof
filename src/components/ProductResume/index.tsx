@@ -8,14 +8,12 @@ const ProductResume: React.FC<Products> = ({ products }) => {
     (total, product) => total + parseFloat(product.price),
     0
   );
-  console.log(`O valor total dos produtos é: ${totalValue.toFixed(2)}`);
 
   const totalDiscount = products.reduce(
     (total, product) =>
       total + (parseFloat(product.listPrice) - parseFloat(product.price)),
     0
   );
-  console.log(`O desconto total é: ${totalDiscount.toFixed(2)}`);
 
   const totalDelivery = products.reduce(
     (total, product) =>
@@ -24,7 +22,6 @@ const ProductResume: React.FC<Products> = ({ products }) => {
         : total,
     0
   );
-  console.log(`O valor total do delivery é: ${totalDelivery.toFixed(2)}`);
 
   const Total = totalDelivery + totalDiscount + totalValue;
 

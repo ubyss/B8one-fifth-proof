@@ -39,7 +39,6 @@ export interface DataResponse {
 
 export interface ProductListProps {
   products: Product[];
-  map: any
 }
 
 export interface ProductCardProps {
@@ -49,7 +48,7 @@ export interface ProductCardProps {
     price: string;
     shipping: Shipping;
     name: string;
-    setProducts: React.Dispatch<React.SetStateAction<ProductListProps | null>>;
+    setProducts: React.Dispatch<React.SetStateAction<Product[] | null>>;
     products: Product[];
   }
 
